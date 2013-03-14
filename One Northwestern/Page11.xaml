@@ -1,0 +1,46 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="OneNorthwestern.Page11"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/backpivot.jpg" Opacity="0.2"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="onenorthwestern" Text="OneNorthwestern" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Advanced Options" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <CheckBox Content="Pets Allowed" HorizontalAlignment="Left" Margin="16,64,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Furnished" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top" IsChecked="True"/>
+            <CheckBox Content="Open to Sharing" HorizontalAlignment="Left" Margin="16,238,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Walking distance to Public Transport" HorizontalAlignment="Left" Margin="16,325,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="Parking" HorizontalAlignment="Left" Margin="16,415,0,0" VerticalAlignment="Top" IsChecked="True"/>
+            <Button Content="OK" HorizontalAlignment="Left" Margin="55,557,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_1"/>
+            <Button Content="Cancel" HorizontalAlignment="Left" Margin="217,557,0,0" VerticalAlignment="Top" Width="175" Click="Button_Click_2"/>
+
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="100" Margin="-25,639,0,-100" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>

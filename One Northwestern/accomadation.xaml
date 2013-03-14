@@ -1,0 +1,71 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+    x:Class="OneNorthwestern.Page2"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/SplashScreenImage.jpg" Opacity="0.3"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="onenorthwestern" Text="OneNorthwestern" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Accommodation" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="60"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="10,117,14,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="285*"/>
+                <RowDefinition Height="367*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="24,8,0,0" TextWrapping="Wrap" Text="Monthly Budget:" VerticalAlignment="Top"/>
+            <Slider x:Name="sliderprice" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Width="436" Maximum="2000" Minimum="500" LargeChange="10" Height="87" Background="White" Value="1000" Foreground="#FF492F92"/>
+            <TextBlock x:Name="priceValue" HorizontalAlignment="Left" Margin="186,8,0,0" TextWrapping="Wrap" Text="$1000" VerticalAlignment="Top" RenderTransformOrigin="0.496,0.385"/>
+
+            <maps:Map HorizontalAlignment="Left" Margin="22,163,0,0" VerticalAlignment="Top" Height="185" Width="416" Center="42.0411, -87.6900" ZoomLevel="10" Grid.RowSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="24,73,0,0" TextWrapping="Wrap" Text="Location:" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="65" Margin="10,96,0,0" TextWrapping="Wrap" Text="Evanston" VerticalAlignment="Top" Width="390" FontSize="20" Background="White" Foreground="#FF492F92"/>
+            <Image HorizontalAlignment="Left" Height="47" Margin="398,106,0,0" VerticalAlignment="Top" Width="48" Source="/Assets/arrow_right.png"/>
+
+            <toolkit:DatePicker HorizontalAlignment="Left" Margin="291,79,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <toolkit:DatePicker HorizontalAlignment="Left" Margin="292,167,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="65,146,0,0" TextWrapping="Wrap" Text="Baths:" VerticalAlignment="Top" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="346,146,0,0" TextWrapping="Wrap" Text="To:" VerticalAlignment="Top" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="57,63,0,0" TextWrapping="Wrap" Text="Rooms:" VerticalAlignment="Top" Grid.Row="1"/>
+            <toolkit:ListPicker HorizontalAlignment="Left" Margin="37,83,0,0" VerticalAlignment="Top" Width="121" Height="166" Grid.Row="1">
+                <toolkit:ListPickerItem Content="1" HorizontalAlignment="Left" Width="62" Height="51"/>
+                <toolkit:ListPickerItem Content="2" HorizontalAlignment="Left" Width="62"/>
+                <toolkit:ListPickerItem Content="3" HorizontalAlignment="Left" Width="62" Height="57"/>
+            </toolkit:ListPicker>
+            <Button Content="Search" HorizontalAlignment="Left" Margin="24,238,0,0" VerticalAlignment="Top" Height="83" Width="416" Click="Button_Click_1" Grid.Row="1"/>
+            <TextBlock x:Name="advanced" HorizontalAlignment="Left" Margin="103,321,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Advanced Search" VerticalAlignment="Top" Width="250" FontWeight="Bold" TextDecorations="Underline" Foreground="#FF777EFF" FontSize="22" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Margin="334,62,0,0" TextWrapping="Wrap" Text="From:" VerticalAlignment="Top" Grid.Row="1" RenderTransformOrigin="3.795,-0.907"/>
+            <toolkit:ListPicker HorizontalAlignment="Left" Margin="37,171,0,0" VerticalAlignment="Top" Width="121" Height="166" Grid.Row="1">
+                <toolkit:ListPickerItem Content="1" HorizontalAlignment="Left" Width="62" Height="51"/>
+                <toolkit:ListPickerItem Content="2" HorizontalAlignment="Left" Width="62" Margin="29,0,0,0"/>
+                <toolkit:ListPickerItem Content="3" HorizontalAlignment="Left" Width="62" Height="57"/>
+            </toolkit:ListPicker>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
